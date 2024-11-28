@@ -1,0 +1,259 @@
+<!DOCTYPE HTML>
+<!--
+    Hyperspace by HTML5 UP, with a sassy twist.
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+
+    <script>
+        // Redirect to login if the session is not set
+        if (!sessionStorage.getItem("authenticated")) {
+            window.location.href = "login.html";
+        }
+    </script>
+    
+    <title>That's The Spirit! (Or Lack Thereof)</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+	<style>
+	
+
+	</style>
+
+
+
+</head>
+<body class="is-preload">
+    <div class="hamburger mobile-only" onclick="toggleSidebar()">☰</div>
+
+    <!-- Sidebar -->
+    <section id="sidebar">
+        <div class="inner">
+            <nav>
+                <ul>
+                    <li><a href="#intro">Welcome (Brace Yourself)</a></li>
+                    <li><a href="#live-camera-feed">Live-ish Camera Feed</a></li>
+                    <li><a href="#current-news">Vote on a name now!</a></li>
+                    <li><a href="#progress-ticker">The "Progress" Ticker</a></li>
+                    <li><a href="#three">Get in Touch <br> (Send Complaints)</a></li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Intro -->
+		<section id="intro" class="wrapper style1 fullscreen fade-up">
+			<div class="inner">
+				<h1>That's The Spirit!  <br> (Or Lack Thereof)</h1>
+				<p>Welcome to the ultimate saga of ship delays, cost overruns, and political comedy gold.</p>
+				<!-- Progress Columns -->
+				<div class="progress-columns row" style="display: flex; justify-content: space-around; margin-top: 20px;">
+					<div class="col-4 col-12-xsmall">
+						<h3>Taxpayer Costs</h3>
+						<p id="taxpayer-cost">$0 Million (and counting)</p>
+					</div>
+					<div class="col-4 col-12-xsmall">
+						<h3>Time Overdue</h3>
+						<p id="time-overdue">0 Days</p>
+					</div>
+					<div class="col-4 col-12-xsmall">
+						<h3>Next Promised Date</h3>
+						<p>Early 2027 (Tentative)</p>
+					</div>
+				</div>
+				<ul class="actions">
+                    <li><a href="#live-camera-feed" class="button scrolly">Get the Full Story below<br><br><i style="font-size: 18px;" class="mobile-only fas fa-arrow-circle-down"></i>
+                    </a></li>
+				</ul>
+			</div>
+		</section>
+		
+        <!-- Live Camera Feed -->
+		<section id="live-camera-feed" class="wrapper style2 spotlights">
+			<section>
+				<div class="image" id="iframe-container">
+					<!-- Placeholder content or initially hidden iframe for deferred loading -->
+					<p id="iframe-placeholder">Loading the live feed...</p>
+				</div>
+		
+				<div class="content">
+					<div class="inner">
+						<h2>Live-ish Camera Feed</h2>
+						<p>Behold, the majestic sight of our brand-new ferry… still comfortably docked in Scotland. Maybe one day it'll brave the seas?</p>
+						<ul class="actions">
+							<li><button id="toggle-button" class="button">Switch to spirit V</button></li>
+						</ul>
+					</div>
+				</div>
+			</section>
+		</section>
+        <section id="current-news" class="wrapper style2 spotlights">
+            <section>
+                <div class="tag-cloud-container"><div class="image  " id="tag-cloud" style="width: 100%; height: 400px;"></div>
+            </div>
+
+                <div class="content">
+                    <div class="inner">
+                        <h3>Public Poll: Name the Ferry</h2>
+                        <p>After all the delays, it’s only fair that the people get to name the ferry. Current favorites include "The Neverender" and "SS Delusion." Cast your vote!</p>
+                        <ul class="actions">
+                            <li><button id="openModal"  class="button">Vote Now</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </section>
+        
+		
+        <!-- Progress Ticker -->
+		<section id="progress-ticker" class="wrapper style3 fade-up">
+			<div class="inner" style="margin: auto;">
+				<h2>Progress Tracker</h2>
+				<p>Behold the "progress" (or lack thereof) of the Spirit of Tasmania project. These graphs lay bare the comedy of errors in all its glory.</p>
+				<div class="features">
+					<section>
+						<h3 class="align-center">Original Budget vs. Current Cost (Devonport Port in millions)</h3>
+						<div id="graph-cost-overruns" style="width: 100%; height: 300px;"></div>
+						<p class="align-center">Tracking the staggering cost escalation.</p>
+					</section>
+					<section>
+						<h3 class="align-center">Planned vs. Actual Service Start Dates</h3>
+						<div id="graph-delays" style="width: 100%; height: 300px;"></div>
+						<p class="align-center">The reality of project delays over time.</p>
+					</section>
+					<section>
+						<h3 class="align-center">Projected Storage Costs <br> in millions</h3>
+						<div id="graph-storage-costs" style="width: 100%; height: 300px;"></div>
+						<p  class="align-center">How much it's costing to store a ferry in Scotland.</p>
+		
+					</section>
+					<section>
+						<h3 class="align-center">Economic Losses Due to Delays <br> in millions</h3>
+
+						<div id="graph-economic-impact" style="width: 100%; height: 300px;"></div>
+						<p class="align-center">The estimated impact on Tasmania's economy.</p>
+					</section>
+				</div>				
+
+			</div>
+		</section>
+        <!-- Get in Touch -->
+        <section id="three" class="wrapper style1 fade-up">
+            <div class="inner">
+                <h2>Get in Touch (Send Complaints)</h2>
+                <p>Have a suggestion? Or just want to rant about project mismanagement? We’re all ears!</p>
+                <div class="split style1">
+                    <section>
+                        <!-- Formspree form integration -->
+                        <form
+                        action="https://formspree.io/f/xkgnbeyp"
+                        method="POST"
+                        onsubmit="return validateForm()"
+                    >
+                        <div class="fields">
+                            <div class="field half">
+                                <label for="name">Name</label>
+                                <input type="text" name="name" id="name" required />
+                                <span class="error-message" id="name-error" style="display: none; color: red;">Please enter your name.</span>
+                            </div>
+                            <div class="field half">
+                                <label for="email">Email</label>
+                                <input type="email" name="email" id="email" required />
+                                <span class="error-message" id="email-error" style="display: none; color: red;">Please enter a valid email.</span>
+                            </div>
+                            <div class="field">
+                                <label for="message">Message</label>
+                                <textarea name="message" id="message" rows="5" required></textarea>
+                                <span class="error-message" id="message-error" style="display: none; color: red;">Please enter your message.</span>
+                            </div>
+                        </div>
+                        <ul class="actions">
+                            <li><button type="submit" class="button submit">Send Your Rant</button></li>
+                        </ul>
+                    </form>
+                    </section>
+                    <section>
+                        <ul class="contact">
+                            <li>
+                                <h3>Address</h3>
+                                <span>Probably somewhere in a meeting room...<br />
+                                Deliberating delays.<br />
+                                TAS, Australia</span>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+                
+    <div id="disclaimer" class="disclaimer">
+        <p>
+            Disclaimer: All data presented here is either fabricated, exaggerated, or creatively interpreted for comedic purposes. 
+            If you take this seriously, you might need a better hobby. Relax, it’s satire!
+        </p>
+    </div>
+        </section>
+        
+        <!-- Modal Structure -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+              <span id="closeModal" class="close">&times;</span>
+              <!-- Embedded Google Form -->
+              <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe7C8rrrsYESpmj2ZG6wQfQpm9lHohg9Fy3mk0nxfBc-o0nbA/viewform?embedded=true" width="640" height="776" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+            </div>
+          </div>
+    </div>
+    <style>
+        .disclaimer {
+            color: #fff;
+            text-align: center;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-style: italic;
+        }
+    
+        .disclaimer p {
+            margin: 0;
+        }
+    
+        @media (max-width: 736px) {
+            .disclaimer {
+                font-size: 12px;
+                padding: 8px;
+            }
+        }
+    </style>
+
+
+    <!-- Footer -->
+	<footer id="footer" class="wrapper style1-alt">
+		<div class="inner">
+			<ul class="menu">
+				<li>&copy; Not the Liberal Government.</li>
+				<li>Design: <a href="http://html5up.net">HTML5 UP</a> (modified for humor and spirit tracking).</li>
+				<li>Licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</li>
+			</ul>
+		</div>
+	</footer>
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <!-- Include ApexCharts -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <!-- Script for Creating Tag Cloud -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-cloud/1.2.5/d3.layout.cloud.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
